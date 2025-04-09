@@ -8,6 +8,6 @@
 
 ## Code and Structure
 
-- (data) contains all structures/files that were used for transfer learning.
+- `data` contains all structures/files that were used for transfer learning.
 
-- (ranking) contains all scripts/files/structures that where computationally analyzed. 
+- `ranking` contains all scripts/files/structures that where computationally analyzed. 
