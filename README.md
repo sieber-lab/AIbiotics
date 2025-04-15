@@ -21,3 +21,5 @@ Our approach demonstrates how the power of modern deep learning techniques accel
 - `data` contains all structures/files that were used for transfer learning.
 
 - `ranking` contains all scripts/files/structures that where computationally analyzed. 
+
+- `sar` contains all scripts/files/structures for SAR that where computationally analyzed. 
