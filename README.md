@@ -2,7 +2,10 @@
 
 ## An End-to-End Deep Learning Pipeline for Rapid *De Novo* Antibiotic Discovery
 
-Martin F. Köllen, Maximilian G. Schuh, Robin Kretschmer, Junhong Chen, Annkathrin I. Bohne, Dominik P. Halter, Stephan A. Sieber^*
+Martin F. Köllen,+ Maximilian G. Schuh,+ Robin Kretschmer, Junhong Chen, Annkathrin I. Bohne, Dominik P. Halter, Stephan A. Sieber*
+
++ Contributed equally to this work
+* Corresponding author
 
 **Abstract**
 To combat the growing threat of antimicrobial resistance, the rapid discovery of novel antibiotics beyond the already existing chemical libraries is required.
