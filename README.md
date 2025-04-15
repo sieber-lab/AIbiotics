@@ -1,4 +1,4 @@
-# AIbiotics
+# Code and Data for AIbiotics
 
 ## An End-to-End Deep Learning Pipeline for Rapid *De Novo* Antibiotic Discovery
 
@@ -7,6 +7,7 @@ Martin F. Köllen,+ Maximilian G. Schuh,+ Robin Kretschmer, Junhong Chen, Annkat
 *(+ Contributed equally to this work; * Corresponding author)*
 
 **Abstract**
+
 To combat the growing threat of antimicrobial resistance, the rapid discovery of novel antibiotics beyond the already existing chemical libraries is required.
 We present a deep learning-driven pipeline for *de novo* antibiotic design. 
 It uses a chemical language model trained on various molecules---such as drug-like compounds, and natural products---and then applies transfer learning with diverse antibiotic scaffolds to generate structurally unprecedented antibiotic candidates.
