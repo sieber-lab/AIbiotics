@@ -1,4 +1,4 @@
-[![ChemrXiv](https://img.shields.io/badge/ChemrXiv-ebe000.svg)](https://doi.org/)
+[![ChemrXiv](https://img.shields.io/badge/ChemrXiv-ebe000.svg)](https://doi.org/10.26434/chemrxiv-2025-s418c)
 
 # Generative deep learning pipeline yields potent Gram-negative antibiotics
 
@@ -42,7 +42,6 @@ If you use our work in your research, please cite:
   archiveprefix = {ChemRxiv},
   langid = {english},
   keywords = {antibiotics,automated synthesis,de novo drug design,deep learning,drug discovery,Gram-negative,machine learning,MRSA},
-  file = {C:\Users\Maximilian Schuh\Zotero\storage\6X387RIH\Köllen et al. - 2025 - Generative deep learning pipeline yields potent Gram-negative antibiotics.pdf}
 }
 
 ```
