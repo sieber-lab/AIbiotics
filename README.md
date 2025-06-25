@@ -111,7 +111,7 @@ python sar/sar_pipeline.py \
   -e entry_data.csv \
   --entry-label-column Label \
   -o results.csv \
-  --label-map low:0,medium:1,high:2 \
+  --label-map low:0,high:1 \
   --fp-types Mordred ECFP \
   --no-mordred-3d \
   --ecfp-bits 2048 \
