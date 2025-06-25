@@ -20,15 +20,106 @@ This work showcases the power of our innovative deep learning framework to signi
 
 ## Structure
 
-- `data` contains all structures/files that were used for transfer learning.
+```
+AIbiotics
+│
+├── LICENSE                           # License file for project use
+├── README.md                         # Project overview and usage instructions
+├── env.yml                           # Conda environment
+│
+├── data/                             # Core data folder containing all inputs and processed datasets
+│   ├── entry_curation.ipynb          # Jupyter notebook that curates and filters the eNTRy dataset
+│   ├── PubChem_compound_text_antibiotic.csv   # 2239 known antibiotics annotated from PubChem 
+│   ├── transfer_learning_antibiotics.txt      # SMILES strings used for chemical language model fine-tuning
+│   │
+│   ├── derivatives/                  # Molecule sets for automated SAR testing of lead compound derivatives
+│   │   ├── 3-(5-Nitro-2-furyl)acrylic acid.txt        # Core antibiotic structure to be derivatized
+│   │   └── Combination products without salts.txt     # All possible antibiotic-like reaction products
+│   │
+│   ├── de_novo_antibiotics/          # Generated molecules using fine-tuned model
+│   │   ├── de_novo_pubchem_antibiotic.csv     # All generated SMILES from transfer-learned model
+│   │   ├── molecules_10_0.7.txt                 # Epoch 10 generation 
+│   │   ├── molecules_20_0.7.txt                 # Epoch 20 generation 
+│   │   ├── molecules_30_0.7.txt                 # Epoch 30 generation 
+│   │   └── molecules_40_0.7.txt                 # Epoch 40 generation
+│   │
+│   └── entry_dataset/                # Filtered compound sets for permeability/accumulation (Richter et al.)
+│       ├── accumulators_smiles.csv         # Molecules known to accumulate in bacteria
+│       ├── non_accumulators_smiles.csv     # Molecules known NOT to accumulate
+│       ├── merged_cleaned_dataset.csv      # Combined dataset used for model training
+│       ├── table1.csv – table6.csv         # Original datatables (Richter et al.)
+│
+├── ranking/                          # Scoring pipeline to rank de novo generated molecules
+│   ├── de_novo_pipeline.py                 # Main script ranks molecules based on accumulation and synthetic accessibility
+│   └── final_antibiotics_predictions.csv   # Output file with top-ranked candidate antibiotics
+│
+└── sar/                              # Structure–Activity Relationship pipeline to rank derivatives
+    ├── sar_pipeline.py               # SAR evaluation script for lead compound derivatives
+    └── derivatives_predictions.csv   # Output file with model predictions on SAR derivative compounds
 
-- `ranking` contains all scripts/files/structures that where computationally analyzed. 
+```
 
-- `sar` contains all scripts/files/structures for SAR that where computationally analyzed. 
+## Usage
+
+### Installation
+
+Follow these commands to download and install all scripts and packages.
+
+```
+git clone https://github.com/sieber-lab/AIbiotics.git
+cd AIbiotics
+
+conda env create -f env.yml
+conda activate AIbiotics
+```
+
+### *De novo* generation
+
+Please follow the instructions from the [virtual_libraries](https://github.com/ETHmodlab/virtual_libraries/tree/master) GitHub to generate new molecules.
+We used the `data/transfer_learning_antibiotics.txt` file to generate our *de novo* antibiotics. 
+
+### *De novo*-generated molecule scoring pipeline
+
+This is the command line interface to score our *de novo* molecules. 
+You can adapt all parameters and input files as you wish.
+
+```
+python ranking/de_novo_pipeline.py \
+  --input my_smiles.csv \
+  --smiles-column SMILES \
+  --entry-dataset entry_dataset/merged_cleaned_dataset.csv \
+  --output results.csv \
+  --ecfp-bits 1024 \
+  --top-k 5 \
+  --test-size 0.8 \
+  --random-state 123 \
+  --tb-model-path /models/tb_model \
+  --tb-lgbm-path /models/tb_lgbm.joblib \
+  --description "Custom description for TwinBooster"
+```
+
+### Structure–Activity Relationship pipeline to rank derivatives
+
+This is the command line interface to rank our derivatives for accumulation. 
+You can adapt all parameters and input files as you wish.
+```
+python sar/sar_pipeline.py \
+  -d my_derivatives.csv \               
+  --derivatives-smiles-column SMILES \ 
+  -e entry_data.csv \
+  --entry-label-column Label \
+  -o results.csv \
+  --label-map low:0,medium:1,high:2 \
+  --fp-types Mordred ECFP \
+  --no-mordred-3d \
+  --ecfp-bits 2048 \
+  --n-jobs 16 \
+  --ag-verbosity 2
+  ```
 
 ## Citation
 
-If you use our work in your research, please cite:
+If you use our work in your research, please cite :)
 ```
 @misc{kollen2025generative,
   title = {Generative Deep Learning Pipeline Yields Potent {{Gram-negative}} Antibiotics},
