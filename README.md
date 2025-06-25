@@ -73,9 +73,11 @@ conda env create -f env.yml
 conda activate AIbiotics
 ```
 
+Follow the instructions from this [TwinBooster](https://github.com/maxischuh/TwinBooster) repository to set up TwinBooster correctly and download its weights from the provided links or use `twinbooster.download_models()`.
+
 ### *De novo* generation
 
-Please follow the instructions from the [virtual_libraries](https://github.com/ETHmodlab/virtual_libraries/tree/master) GitHub to generate new molecules.
+Please follow the instructions from the [virtual_libraries](https://github.com/ETHmodlab/virtual_libraries) GitHub to generate new molecules.
 We used the `data/transfer_learning_antibiotics.txt` file to generate our *de novo* antibiotics. 
 
 ### *De novo*-generated molecule scoring pipeline
