@@ -1,0 +1,55 @@
+#Welcome to the custom DIA-NN config file
+
+#This config file sets the default analysis configuration for DIA-NN runs for the AKSieber
+
+#Do not worry about specifying the paths of files, outputs or fasta, those are set automatically
+#by the script. Similarly, the "--threads" parameter will be overwritten by the script depending
+#on how many cores you specify while running the pipeline in the command line
+
+#To change this config, simply change the value for the respective parameter below. For a
+#comprehensive explanation of what each "--" parameter means, check the DIA-NN documentation:
+#https://github.com/vdemichev/DiaNN
+
+#If the parameter you want to change is not specified, simply add it below, make sure that it
+#uses the correct command line interface identifier and is preceded by "--". For example, like
+#this: "--new_fancy_parameter fancy_setting". Check https://github.com/vdemichev/DiaNN for more
+#information
+
+#IMPORTANT: if you change/add parameters, make sure there is no unnecessary whitespace after it!
+#for example, if you add "--new_param", you have to make sure it is written like that and not like
+#"--new_param ". Similarly, if the param takes a value, it must be like "--new_param 1" and not
+#"--new_param 1 ". The extra white space will break the parsing of the script and will crash the
+#analysis!
+
+#remember that you have to save this file as "diannpar.txt" inside the folder you want to process
+#in your NAS directory, otherwise the script will not find it.
+
+##### START OF THE CONFIG #####
+
+--lib
+--threads 7
+--verbose 1
+--qvalue 0.01
+--matrices
+--gen-spec-lib
+--predictor
+--fasta-search
+--min-fr-mz 200
+--max-fr-mz 1800
+--met-excision
+--cut K*,R*
+--missed-cleavages 2
+--min-pep-len 7
+--max-pep-len 30
+--min-pr-mz 300
+--max-pr-mz 1800
+--min-pr-charge 2
+--max-pr-charge 4
+--unimod4
+--reanalyse
+--relaxed-prot-inf
+--smart-profiling
+--peak-center
+--no-ifs-removal
+--relaxed-prot-inf
+

@@ -49,6 +49,12 @@ AIbiotics
 │       ├── merged_cleaned_dataset.csv      # Combined dataset used for model training
 │       ├── table1.csv – table6.csv         # Original datatables (Richter et al.)
 │
+├── ms_data/                          # MS data processing
+│   ├── correlation_analysis.ipynb          # Correlation analysis of the generated MS data
+│   ├── diannpar.txt                        # DIA-NN parameter file
+│   ├── JH15.txt - JHamp.txt                # Perseus output files
+│   └── UP000000625_83333.fasta             # FASTA file of E. coli
+│
 ├── ranking/                          # Scoring pipeline to rank de novo generated molecules
 │   ├── de_novo_pipeline.py                 # Main script ranks molecules based on accumulation and synthetic accessibility
 │   └── final_antibiotics_predictions.csv   # Output file with top-ranked candidate antibiotics
