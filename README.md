@@ -142,7 +142,6 @@ python sar/sar_pipeline.py \
 
 If you use our work in your research, please cite :)
 ```tex
-{
 @article{kollen2025generativea,
   title = {Generative {{Deep Learning Pipeline Yields Potent Gram-Negative Antibiotics}}},
   author = {K{\"o}llen, Martin F. and Schuh, Maximilian G. and Kretschmer, Robin and Hesse, Joshua and Schum, Dominik and Chen, Junhong and Bohne, Annkathrin I. and Halter, Dominik P. and Sieber, Stephan A.},
@@ -152,7 +151,4 @@ If you use our work in your research, please cite :)
   publisher = {American Chemical Society},
   doi = {10.1021/jacsau.5c00602}
 }
-
-}
-
 ```
